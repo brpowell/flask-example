@@ -1,0 +1,25 @@
+<html>
+	<body>
+		<link rel="stylesheet" href="/static/css/site.css">
+		<h2>Books</h2>
+		<a href={{ url_for('index') }}>Back to index</a>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Price</th>
+				<th>Type</th>
+			</tr>
+			{% for book in books %}
+				<tr>
+					<td>{{ book.id }}</td>
+					<td>{{ book.title }}</td>
+					<td>{{ book.author.name }}</td>
+					<td>{{ book.price }}</td>
+					<td>{{ book.type }}</td>
+				</tr>
+			{% endfor %}
+		</table>
+	</body
+</html>

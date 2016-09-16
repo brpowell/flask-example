@@ -1,0 +1,27 @@
+<html>
+	<body>
+		<link rel="stylesheet" href="/static/css/site.css">
+		<h2>Authors</h2>
+		<a href={{ url_for('index') }}>Back to index</a>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Bio</th>
+				<th>Favorite Author</th>
+			</tr>
+			{% for author in authors %}
+				<tr>
+					<td>{{ author.id }}</td>
+					<td>{{ author.name }}</td>
+					<td>{{ author.bio }}</td>
+					{% if author.name == 'J. K. Rowling' %}
+						<td>Yes</td>
+					{% else %}
+						<td>No</td>
+					{% endif %}
+				</tr>
+			{% endfor %}
+		</table>
+	</body
+</html>
